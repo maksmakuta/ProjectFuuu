@@ -3,5 +3,5 @@ This repository only for homework and other projects for Lesya Ukrainka Eastern 
 
 Everybody can view this code free.
 
-#About
+# About
 	(C) 2020 Maks Makuta (LakeFm).
