@@ -13,6 +13,17 @@
 #include <dos.h>
 #include <dir.h>
 
+/* code
+int x = 0 ;
+float y = 0.6f ;
+string c = "Hello World!!" ;
+
+int main() {
+	print ( c + ( r + a )) ;
+	return 0 ;
+}
+*/
+
 
 int getWords(std::string file)
 {
@@ -21,6 +32,8 @@ int getWords(std::string file)
     int w = std::distance(in, end);
     return w;
 }
+
+
 
 void SetColor(int ForgC)
 {
@@ -87,7 +100,6 @@ public:
             boolData[10] = isDNumber(d);
             boolData[11] = isID(d,pd);
             boolData[12] = isMainFunc(d);
-
             printLexs(boolData,d);
 
             if(d[0] >= 'a' && d[0] <= 'z' && isID(d,pd) == true && (!boolData[0] && !boolData[1] && !boolData[2] &&
@@ -142,7 +154,7 @@ public:
 
 
 
-    void printLexs(bool boolData[10], std::string text)
+    void printLexs(bool boolData[13], std::string text)
     {
         std::string desc;
 
@@ -216,11 +228,11 @@ private:
     {
         return d==";";
     }
+
     bool isOP(std::string o)
     {
         return o == "+" || o == "-" || o == "=";
     }
-
     bool isString(std::string o)
     {
         return o.find('"') != std::string::npos;
@@ -256,7 +268,6 @@ private:
     }
 
 };
-
 
 int main(void)
 {
