@@ -1,98 +1,53 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <vector>
 #include <graphics.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
-#define D pow(2,6)
-#define f(x) x*x*x // main fun
-#define F(x) (f(x))/D
-
-using namespace std;
-
-void p(int x, int y,char* data){
-    setcolor(WHITE);
-    settextstyle (SANS_SERIF_FONT, HORIZ_DIR, 0);
-    outtextxy(x,y,data);
+void circle(int x, int y, int r, int c, int t){
+    setcolor(c);
+    setfillstyle(t,c);
+    circle(x,y,r);
+    floodfill(x,y,c);
 }
 
-class P{
-private:
-    int x,y;
-public:
-    P(){
-        this->x = 0;
-        this->y = 0;
-    }
-    P(int a, int b){
-        this->x = a;
-        this->y = b;
-    }
-    int getX(){return x;}
-    int getY(){return y;}
-};
-class T{
-private:
-    int sX, sY;
-    int tColor = WHITE, fColor = RED;
-    vector<P> f;
-public:
-    T(int x,int y){
-        this->sX = x;
-        this->sY = y;
-    }
+void rect(int x, int y, int w,int h, int c, int t){
+    setcolor(c);
+    setfillstyle(t,c);
+    rectangle(x,y,x+w,y+h);
+    for(int a = 0; a < h;a++)
+    for(int b = 0; b < w;b++)
+    floodfill(x+b,y+a,c);
+}
 
-    void setTColor(int c){this->tColor = c;}
-    void setFColor(int c){this->fColor = c;}
-
-    void draw(){
-        int mX = sX / 2;
-        int mY = sY / 2;
-        int f = 10;
-        setcolor(tColor);
-        line(mX, 0,mX,sY);
-        line(0 ,mY,sX,mY);
-        line(mX-f,f,mX,0);
-        line(mX+f,f,mX,0);
-        line(sX-f,mY-f,sX,mY);
-        line(sX-f,mY+f,sX,mY);
-        p(mX - 2*f,        f, (char*)"Y");
-        p(sX- f,    mY + 2*f, (char*)"X");
-        formula();
-    }
-    void formula() {
-        for (float x = (-1) * (sX / 2); x < (sX / 2); x += 0.01f) {
-            int fx = (sX / 2) - x;
-            int fy = (sY / 2) - F(x);
-            if (fy >= 0 && fy <= sY) {
-                f.push_back(P(fx, fy));
-            }
-        }
-    }
-    void fDrawP(){
-        for(u_int a = 1; a < f.size(); a++){
-            putpixel(f[a-1].getX(),f[a-1].getY(),fColor);
-        }
-    }
-
-    void fDrawL(){
-        for(u_int a = 1; a < f.size(); a++){
-            setcolor(fColor);
-            line(f[a-1].getX(),f[a-1].getY(),f[a].getX(),f[a].getY());
-        }
-    }
-};
-
-int main ()
-{
-    int gd = DETECT, gm;
-    initgraph (&gd, &gm, (char*)"main ");
-    cleardevice ();
-    T t(400,400);
-    t.draw();
-    t.fDrawP();
-    p(500,120,(char*)"Maks Makuta");
-    p(520,150,(char*)"y = x*x*x"    );
+int main (){ 
+    int gdriver = DETECT, gmode, errorcode;
+   initgraph(&gdriver, &gmode, "");
+   errorcode = graphresult();
+   if (errorcode != grOk) {  /* an error occurred */
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1);
+   }
+    
+    
+   circle(300,300,150,WHITE,5);
+   rect(150,270,300,60,WHITE,1);
+   rect(280,150,40,40,WHITE,1);
+   
+   setcolor(WHITE);
+   line(280,190,300,230);
+   line(320,190,300,230);
+   for(int a = 0; a < 26; a++)
+       floodfill(280+a,190+a,WHITE);
+   
+   setcolor(RED);
+   line(280,190,320,190);
+    setlinestyle(USERBIT_LINE,0x3FF3, 3);
+    line(300,150,300,450);
+    line(150,300,450,300);
+    
     getch();
     closegraph();
-
+    return 0;
 }
