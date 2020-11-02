@@ -1,9 +1,7 @@
 #include <graphics.h>
-#include <iostream>
-#include <vector>
-#include <stdio.h>
 
 float S  = 5.0f;
+#define S 10
 
 class P{
 public:
@@ -18,35 +16,36 @@ public:
         this->y = b;
     }
     
-    
 };
 
 class Cube{
 public:
-    std::vector<P> data;
+    P data[S];
+    int i = 0;
     int x ,y ,r;
     
     Cube(int a, int b, int d){
-    
         this->x = a;
         this->y = b;
         this->r = d; 
+        
    
-   for(float t = 0.0f; t < 3.14f*2; t+=3.14f/3){
-       int tx =  x + r * cos(t);
-       int ty =  y + r * sin(t);
-        data.push_back(P(tx,ty));
-    }
+        for(float t = 0.0f; t < 3.14f*2; t+=3.14f/3){
+            int tx =  x + r * cos(t);
+            int ty =  y + r * sin(t);
+            data[i] = P(tx,ty);
+            i++;
+        }
         
     }
     
     void draw(){
         
-        for(int a = 1; a < data.size(); a+=2){
+        for(int a = 1; a <= S; a+=2){
             line(data[a].x,data[a].y,x,y);
             line(data[a].x,data[a].y,data[a-1].x,data[a-1].y);
             
-            if(a == data.size()-1){
+            if(a == S-1){
                 line(data[a].x,data[a].y,data[0].x,data[0].y);
             }else{
                 line(data[a].x,data[a].y,data[a+1].x,data[a+1].y);
@@ -57,7 +56,7 @@ public:
     }
     
     void move(float dx, float dy){
-        for(int a = 0; a < data.size(); a++){
+        for(int a = 0; a < S; a++){
             data[a].x += dx;
             data[a].y += dy;
         }
@@ -73,7 +72,7 @@ public:
 };
 
 int main (){ 
-    int gdriver = DETECT, gmode, errorcode;
+    int gdriver = X11_1024x768, gmode, errorcode;
    initgraph(&gdriver, &gmode, "");
    errorcode = graphresult();
    if (errorcode != grOk) {  /* an error occurred */
@@ -87,12 +86,13 @@ int main (){
    int p = 0;
    
    while(true){
+       setcolor(WHITE);
         a.draw();
         p++;
                 a.move(S,0);
-                printf("-S,0");
             cleardevice();
                 if(p > 120)break;
+                usleep(20*1000);
 }
    
     getch();
