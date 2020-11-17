@@ -1,7 +1,4 @@
-//
-// Created by maks on 22.10.20.
-//
-
+#include <GL/glut.h>
 #ifndef OPENGLAPP_COLORUTILS_H
 #define OPENGLAPP_COLORUTILS_H
 
@@ -17,12 +14,12 @@ int i(char a){
         case '7' : return 7;
         case '8' : return 8;
         case '9' : return 9;
-        case 'a' : return 10;
-        case 'b' : return 11;
-        case 'c' : return 12;
-        case 'd' : return 13;
-        case 'e' : return 14;
-        case 'f' : return 15;
+        case 'a' :case 'A': return 10;
+        case 'b' :case 'B': return 11;
+        case 'c' :case 'C': return 12;
+        case 'd' :case 'D': return 13;
+        case 'e' :case 'E': return 14;
+        case 'f' :case 'F': return 15;
         default: return -1;
     }
 }
@@ -33,9 +30,15 @@ double* color(char* text){
         int c1 = i(text[a*2]);
         int c2 = i(text[a*2+1]);
         int c = c1 * c2;
-        color[a] = c/255.0;
+        color[a] = c%256;
     }
     return color;
 }
+
+void glColor(char* c){
+    double *d = color(c);
+    glColor3d(d[0],d[1],d[2]);
+}
+
 
 #endif //OPENGLAPP_COLORUTILS_H
