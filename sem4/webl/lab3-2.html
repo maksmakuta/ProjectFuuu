@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Colorful table in HTML5/CSS3</title>
+    <style  type="text/css">
+        table{
+            border-style : dotted;
+            color : white;
+            background : darkgray; 
+            border-collapse: collapse;
+        }
+        td{
+            text-align : center;
+        }
+        caption{
+            text-align : right;
+            color : black;
+        }
+        .header{
+            background : #006;
+        }
+        .row1{
+            background : blue;
+        }
+        .row2{
+            background : #993366;
+        }
+        .list{
+            background : #494988;
+        }
+    </style>
+    
+</head>
+<body>
+
+<!-- colors is incorrect -->
+<table border="1px">
+   <caption><b>Заголовок таблиці</b></caption>
+    <tr class="header">
+        <td>№ п/п </td>
+        <td> стовпчик 1 </td>
+        <td> стовпчик 2 </td>
+        <td> стовпчик 3 </td>
+        <td> стовпчик 4 </td>
+    </tr>
+    
+    <tr>
+        <td class="list"> 1 </td>
+        <td class="row1"> 125 </td>
+        <td class="row1"> 256 </td>
+        <td class="row1"> 224 </td>
+        <td class="row1"> 878 </td>
+    </tr>
+    
+    <tr>
+        <td class="list"> 2 </td>
+        <td class="row2"> 245 </td>
+        <td class="row2"> 348 </td>
+        <td class="row2"> 456 </td>
+        <td class="row2"> 965 </td>
+    </tr>
+    
+    <tr>
+        <td class="list"> 3 </td>
+        <td class="row1"> 234 </td>
+        <td class="row1"> 523; </td>
+        <td class="row1"> 362 </td>
+        <td class="row1"> 213 </td>
+    </tr>
+    
+    <tr>
+        <td class="list"> 4 </td>
+        <td class="row2"> </td>
+        <td class="row2"> 525 </td>
+        <td class="row2"> 425 </td>
+        <td class="row2"> 452 </td>
+    </tr>
+    
+    <tr>
+        <td class="list"> 5 </td>
+        <td class="row1"> </td>
+        <td class="row1"> 435 </td>
+        <td class="row1"> 556 </td>
+        <td class="row1"> 657 </td>
+    </tr>
+</table>
+
+</body>
+</html>
