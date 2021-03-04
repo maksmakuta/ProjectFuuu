@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>div and span</title>
+    <style  type="text/css">
+        .first{
+            width : 350px;
+            border : 2px solid brown;
+            padding : 30px;
+            color : blue;
+            margin-bottom : 20px;
+            background : pink;
+        }
+        
+        .second{
+            width : 500px;
+            border : 1px solid black;
+            text-indent : 30px;
+            margin-bottom : 20px;
+            padding : 30px;
+        }
+        .third{
+            width : 500px;
+            padding : 20px;
+            border : 2px solid black;
+        }
+        .included{
+            margin : 10px;
+            color : blue;
+            padding-left : 5px;
+            border-left : 5px solid red;
+        }
+        .bold{
+            font-weight: 700;
+        }
+        
+        .rc{
+            color : red;
+        }
+        
+        .bg{
+            background : yellow;
+        }
+        
+        .br{
+            border : 1px dotted black;
+        }
+    </style>
+    
+</head>
+<body>
+
+<div class="first">
+Основним елементом, який застосовується 
+при блочній верстці є тег <span class="bold">&lt;div&gt;</span>. Фрагмент 
+коду, який позначений цим тегом, 
+називається шаром. З допомогою стилів 
+блоки позиціонуються на сторінці, 
+формуючи шаблон, який потім 
+наповнюється контентом
+
+</div>
+
+<div class="second">
+<p>Поля <span class="bold">(padding)</span> – це <span class="rc">відстань</span> від внутрішнього краю межі або краю блоку до уявного прямокутника, який обмежує вміст блоку. <span class="bg">Значення полів не можуть бути від’ємними.</span></p>
+
+<p>Межі <span class="bold">(border)</span> – це лінії кругом полів елемента на одній, двох, трьох або чотирьох його сторонах. В кожної лінії є товщина, стиль та колір.</p>
+
+<p>Відступ <span class="bold">(margin)</span> – це <span class="br">порожній простір</span> від зовнішнього краю межі, полів або вмісту блоку. <span class="bold">Межі і поля не є обов’язковими і можуть бути відсутніми.</span></p>
+</div>
+
+<div class="third">
+<p>Верстка – це процес перетворення малюнка у веб-сторінкую</p>
+    <div class="included">
+        Критерії якості верстки:<br>співпадання з дизайном;<br>кросбраузерність;<br>адаптація під різні роздільні здатності;<br>чистий і валідний код.
+    </div>
+<p>Розрізняють верстку табличну, блочну та семантичну.</p>
+
+</div>
+
+</body>
+</html>
