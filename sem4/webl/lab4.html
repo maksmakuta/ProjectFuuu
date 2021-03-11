@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+    <style  type="text/css">
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin : 20px;
+    }
+
+header {
+  background-color: #0df;
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+  color: green;
+}
+
+nav {
+  float: left;
+  width: 30%; ;
+  background: pink;
+  padding: 20px;
+}
+
+a{
+    margin : 10px;
+}
+
+article {
+  float: right;
+  padding: 20px;
+  width: 70%;
+  background-color: #bbf;
+  
+}
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+  
+        background : pink;
+}
+
+footer {
+  background-color: #0af;
+  padding: 10px;
+  text-align: left;
+  color: pink;
+}
+</style>
+</head>
+<body>
+<div>
+<header>
+<center><h3> Перше завдання по HTML5 </h3></center>
+</header>
+<section>
+
+<nav>
+<a href="#"> Про HTML5 </a> <br><br>
+<a href="#"> Нові теги </a> <br><br>
+<a href="#"> Тест </a> <br><br><br><br><br><br><br><br><br><br><br><br><br>
+</nav>
+
+<article> Про HTML5 
+<p><b>HTML5</b> – це нова версія мови HTML, прийнята як рекомендований стандарт 28 жовтня 2014 року W3C.</p>
+<p>Деякі можливості <b>HTML5</b>: <br>
+<ul>
+<li>підтримка геолокації;</li> <li>відтворення відео та аудіо;</li> <li>нові елементи форм;</li> <li>можливість малювання на веб-сторінці та ін.</li>
+</ul>
+</p>
+<p><b>Семантична верстка</b> – це підхід до створення веб-сторінок мовою HTML, який базується на використанні HTML-тегів відповідно до їх семантики (призначення), та забезпечує логічну та послідовну ієрархію веб-сторінки. Тобто назви HTML-тегів повинні співпадати з їх смисловим значенням.</p>
+<p>При семантичній верстці чітко повинні виділятися заголовки різних рівнів, списки, таблиці, малюнки, абзаци та ін. Таким чином семантична верстка дає можливість "бачити" веб-сторінку, читаючи HTML-код, швидше вносити зміни в код, економити час.</p>
+<p>Семантичний HTML-код чистіший і менший за об’ємом, легше читається і простіше шукати помилку.</p>
+</article>
+</section>
+<footer>
+© 2020 Макута Максим
+</footer>
+</div>
+
+</body>
+</html>
