@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudoclases</title>
+    <style  type="text/css">
+    
+    h3{
+        text-align : center;
+    }
+    
+    P:first-child{
+        font-weight: 600;
+    }
+    
+    P:first-letter{
+        font-size: 200%;
+        color : red;
+    }
+    
+    P:first-line{
+        font-family: 'sans-serif', serif;
+        font-size: 147%;
+        color: #00ddaa;
+    }
+    
+    tr:nth-child(even) {background: #C9E3FE}
+    tr:nth-child(odd) {background:  #a7b1db}
+    tr:hover{background : green;}
+    
+    a:link {
+        color: blue;
+    }
+    a:visited {
+        color: orange;
+    }
+    a:active {
+        color: green;
+    }
+    
+    .a_h{
+        font-family: 'notosans';
+        font-size: 120%;
+        color: #ddd;
+        border : solid 2px;
+        text-decoration:none;
+        background : #111;
+    }
+    .a_h:hover{
+        background : #888;
+    }
+    
+    input[type="text"]:hover{
+        border : solid 2px red;
+    }
+    
+    input[type="checkbox"]:checked{
+        background : yellow;
+    }
+    
+    </style>
+</head>
+<body>
+
+<div>
+
+<h3>Про HTML5</h3>
+
+<p>HTML5 – це нова версія мови HTML, прийнята як рекомендований стандарт 28 жовтня 2014 року W3C.</p>
+
+<p>Деякі можливості HTML5: підтримка геолокації; відтворення відео та аудіо; нові елементи форм; можливість малювання на веб-сторінці та ін.</p>
+
+<p>Семантична верстка – це підхід до створення веб-сторінок мовою HTML, який базується на використанні HTML-тегів відповідно до їх семантики (призначення), та забезпечує логічну та послідовну ієрархію веб-сторінки. Тобто назви HTML-тегів повинні співпадати з їх смисловим значенням.</p>
+
+<p>При семантичній верстці чітко повинні виділятися заголовки різних рівнів, списки, таблиці, малюнки, абзаци та ін. Таким чином семантична верстка дає можливість "бачити" веб-сторінку, читаючи HTML-код, швидше вносити зміни в код, економити час.</p>
+
+<p>Семантичний HTML-код чистіший і менший за об’ємом, легше читається і простіше шукати помилку.<p>
+
+</div>
+
+
+<div>
+<table>
+    <caption>Список пар</caption>
+    <tr>
+        <th>#</th>
+        <th>Пара</th>
+        <th>Moodle</th>
+    </tr> 
+    <tr>
+        <td>1</td>
+        <td>Веб (Лекція)</td>
+        <td rowspan=2><a href="http://cs.vnu.edu.ua/moodle/course/view.php?id=96">Web on Moodle</td>
+    </tr> 
+    
+    <tr>
+        <td>2</td>
+        <td>Веб (Лаб)</td>
+    </tr> 
+    
+    <tr>
+        <td>3</td>
+        <td>Програмування (Лаб)</td>
+        <td><a href="http://194.44.187.60/moodle/course/view.php?id=1383">Програмування (Moodle)</a></td>
+    </tr> 
+</table>
+
+</div>
+
+<div>
+<h4> Hyperlink as Button </h4>
+
+<a class="a_h" href="https://moogle.com">Moogle</a>
+
+</div>
+
+<form>
+<fieldset>
+<legend> Form1 </legend>
+
+    <label for="text">text </label><input type="text"> <br>
+    <label for="text">text2 </label><input type="checkbox">
+</fieldset>
+</form>
+
+<form >
+
+<table>
+   <tr>
+        <td>
+            <label for="name">Name:</label>
+        </td>
+        <td>
+            <input type="text" id="name" name="name" required> 
+        </td>
+   </tr>
+   <tr>
+    <td><label for="sname">Surname:</label></td><td><input type="text" id="sname" name="surname" required> </td>
+   </tr>
+   <tr>
+   <td><label for="tel">Phone:</label></td><td><input type="tel" id="tel" name="phone" ></td>
+   </tr>
+   <tr>
+    <td><label for="year">Year of birth:</label></td><td><input type="year" id="year" name="year"></td>
+   </tr>
+  <tr>
+  <td colspan=2><center><input type="submit"></center></td>
+    </tr>
+</table>
+</form>
+
+</body>
+</html>
