@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>JS simple calc alpha </title>
+</head>
+<body>
+<h3>Обчислення суми двох чисел</h3>
+<form>
+<input type="text" id="num_a"> <br> <input type="text" id="num_b"><br>
+<input type="button" value="=" onClick="sum()"> <br> <input type="text" id="result">  
+</form>
+<script>
+function sum(){
+    let num = 0;
+    for(let a = getNumber("num_a"); a < getNumber("num_b");a++){
+        num += a;
+    }
+
+    setNumber("result" ,num);
+    alert("Sum(" + getNumber("num_a") + ","+ getNumber("num_b") + ") = " + num);
+}
+
+function getNumber(id){
+    return Number(document.getElementById(id).value);
+}
+
+function setNumber(id,value){
+    document.getElementById(id).value = value;
+}
+
+</script>
+</body>
+</html>

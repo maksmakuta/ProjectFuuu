@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>JS adder </title>
+</head>
+<body>
+<h3>Обчислення суми двох чисел</h3>
+<form>
+<input type="text" id="num_a"> + <input type="text" id="num_b">
+<input type="button" value="=" onClick="sum()"> <input type="text" id="result">  
+</form>
+<script>
+function sum(){
+    setNumber("result" , getNumber("num_a") + getNumber("num_b"));
+}
+
+function getNumber(id){
+    return Number(document.getElementById(id).value);
+}
+
+function setNumber(id,value){
+    document.getElementById(id).value = value;
+}
+
+</script>
+</body>
+</html>

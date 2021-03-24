@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Периметр трикутника</title>
+    
+    <style>
+    
+        body{
+            background-image: url('https://besthqwallpapers.com/Uploads/30-3-2019/85503/thumb2-abstract-triangular-background-multicolored-abstraction-colored-triangles-geometric-texture-multicolored-geometric-background.jpg');
+            background-position: center; 
+            background-size: cover;
+            padding-top : 50px;
+        }
+        
+        div{
+            margin: 0 auto;
+            border-radius : 1em;
+            width : 50%;
+            padding : 3%;
+            background : #cdb7b5;
+        }
+        
+        h2{
+            text-align : center;
+            color : brown;
+        }
+        
+        p{
+            text-align : center;
+        }
+        
+        img{
+            width : 45%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto 
+        }
+        
+        .foo{
+            color : #a16834;
+        }
+    </style>
+    
+</head>
+<body>
+
+<div>
+<h2> Обчислення периметра трикутника </h2>
+
+<p><span class="foo">Периметром</span> називається сума всіх сторін трикутника</p>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Triangle_with_notations_2.svg/1024px-Triangle_with_notations_2.svg.png"/>
+
+<p> Введіть першу сторону трикутника <input type="text" id="t1" size="3"> </p>
+<p> Введіть другу сторону трикутника <input type="text" id="t2" size="3"> </p>
+<p> Введіть третю сторону трикутника <input type="text" id="t3" size="3"> </p>
+<p> <input type="button" onClick="calc()" value="Обчислити периметр"> </p>
+<p> Периметр трикутника = <input type="text" id="p"> </p>
+</div>
+
+<script>
+function calc(){    
+    if( getNumber("t1") <= 0){
+        setValue("p","Сторона a має бути більше 0!!!");
+    }else if( getNumber("t2") <= 0){
+        setValue("p","Сторона b має бути більше 0!!!");
+    }else if( getNumber("t3") <= 0){
+        setValue("p","Сторона c має бути більше 0!!!");
+    }else{
+        setValue("p" ,getNumber("t1") + getNumber("t2") + getNumber("t3"));
+    }
+}
+
+function getNumber(id){
+    return Number(document.getElementById(id).value);
+}
+
+function setValue(id,value){
+    document.getElementById(id).value = value;
+}
+</script>
+
+</body>
+</html>

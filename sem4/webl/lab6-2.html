@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>JS simple calc alpha </title>
+</head>
+<body>
+<h3>Обчислення суми двох чисел</h3>
+<form>
+<input type="text" id="num_a1"> + <input type="text" id="num_b1">
+<input type="button" value="=" onClick="sum()"> <input type="text" id="result1">  
+
+<br>
+
+<input type="text" id="num_a2"> - <input type="text" id="num_b2">
+<input type="button" value="=" onClick="sub()"> <input type="text" id="result2">  
+
+<br>
+
+<input type="text" id="num_a3"> * <input type="text" id="num_b3">
+<input type="button" value="=" onClick="mul()"> <input type="text" id="result3">  
+</form>
+<script>
+function sum(){
+    setNumber("result1" , getNumber("num_a1") + getNumber("num_b1"));
+}
+
+function sub(){
+    setNumber("result2" , getNumber("num_a2") - getNumber("num_b2"));
+}
+
+function mul(){
+    setNumber("result3" , getNumber("num_a3") * getNumber("num_b3"));
+}
+
+
+function getNumber(id){
+    return Number(document.getElementById(id).value);
+}
+
+function setNumber(id,value){
+    document.getElementById(id).value = value;
+}
+
+</script>
+</body>
+</html>
