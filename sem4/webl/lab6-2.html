@@ -19,6 +19,12 @@
 
 <input type="text" id="num_a3"> * <input type="text" id="num_b3">
 <input type="button" value="=" onClick="mul()"> <input type="text" id="result3">  
+
+<br>
+
+
+<input type="text" id="num_a4"> / <input type="text" id="num_b4">
+<input type="button" value="=" onClick="div()"> <input type="text" id="result4">  
 </form>
 <script>
 function sum(){
@@ -31,6 +37,10 @@ function sub(){
 
 function mul(){
     setNumber("result3" , getNumber("num_a3") * getNumber("num_b3"));
+}
+
+function div(){
+    setNumber("result4" , getNumber("num_a4") / getNumber("num_b4"));
 }
 
 
