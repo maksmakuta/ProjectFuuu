@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Масиви</title>
+</head>
+<body>
+<h2> Робота з масивами</h2>
+<script>
+let arr = [];
+let sum = 0;
+let n;
+do{
+   n = Number(prompt("Number"));
+    if(!isNaN(n))
+        arr.push(n);
+
+}while(n);
+
+for(let n in arr){
+    sum += Number(n);
+}
+
+alert("Сума всіх елементів масиву = " + sum);
+
+</script>
+</body>
+</html>

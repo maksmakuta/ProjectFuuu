@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Масиви</title>
+</head>
+<body>
+<h2>Робота з масивами</h2>
+<script>
+
+let start = Number(prompt("start"));
+let end = Number(prompt("end"));
+
+let arr = [];
+
+if(start > end){
+    let tmp = start;
+    start = end;
+    end = tmp;
+}
+
+for(let a = start;a <= end;a++){
+    arr.push(a);
+}
+
+alert("[" + arr + "]");
+
+</script>
+</body>
+</html>
