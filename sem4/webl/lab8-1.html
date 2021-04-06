@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Масиви</title>
+</head>
+<body>
+<h1> Завдання 8.1 </h1>
+
+<p>змінити колір фону документа;</p>
+<p>змінити колір фону заголовку першого рівня;</p>
+<p>змінити колір фону першого абзацу;</p>
+<p>змінити колір фону третього абзацу;</p>
+<p>змінити колір фону третього пункту списку третього маркованого списку;</p>
+<p>змінити колір фону третьої комірки другого рядка таблиці;</p>
+<p>вивести через alert значення четвертої комірки третього рядка (innerHTML);</p>
+
+<ul>
+    <li>Перший елемент списку</li>
+    <li>Другий елемент списку</li>
+    <li>Третій елемент списку</li>
+    <li>Четвертий елемент списку</li>
+    <li>П'ятий елемент списку</li>
+</ul>
+
+<ul>
+    <li>Перший елемент списку</li>
+    <li>Другий елемент списку</li>
+    <li>Третій елемент списку</li>
+    <li>Четвертий елемент списку</li>
+    <li>П'ятий елемент списку</li>
+</ul>
+
+<ul>
+    <li>Перший елемент списку</li>
+    <li>Другий елемент списку</li>
+    <li>Третій елемент списку</li>
+    <li>Четвертий елемент списку</li>
+    <li>П'ятий елемент списку</li>
+</ul>
+
+<table>
+    <tr>
+        <td>R1C1</td>
+        <td>R1C2</td>
+        <td>R1C3</td>
+        <td>R1C4</td>
+        <td>R1C5</td>
+        <td>R1C6</td>
+        <td>R1C7</td>
+    <tr>
+    
+    <tr>
+        <td>R2C1</td>
+        <td>R2C2</td>
+        <td>R2C3</td>
+        <td>R2C4</td>
+        <td>R2C5</td>
+        <td>R2C6</td>
+        <td>R2C7</td>
+    <tr>
+    
+    <tr>
+        <td>R3C1</td>
+        <td>R3C2</td>
+        <td>R3C3</td>
+        <td>R3C4</td>
+        <td>R3C5</td>
+        <td>R3C6</td>
+        <td>R3C7</td>
+    <tr>
+    
+    <tr>
+        <td>R4C1</td>
+        <td>R4C2</td>
+        <td>R4C3</td>
+        <td>R4C4</td>
+        <td>R4C5</td>
+        <td>R4C6</td>
+        <td>R4C7</td>
+    <tr>
+   
+</table>
+
+
+    <input type="button" value="Button" onClick="onBtnClick()">
+
+<script>
+function onBtnClick(){
+    
+    document.getElementsByTagName("body")[0].style.background = "red";
+    document.getElementsByTagName("h1")[0].style.background = "blue";
+    document.getElementsByTagName("p")[0].style.background = "magenta";
+    document.getElementsByTagName("p")[2].style.background = "#444";
+    document.getElementsByTagName("ul")[2].children[2].style.background = "green";
+    document.getElementsByTagName("td")[7+2].style.backgroundColor = "pink";
+    alert(document.getElementsByTagName("td")[7*2+3].innerHTML);
+}
+</script>
+</body>
+</html>
