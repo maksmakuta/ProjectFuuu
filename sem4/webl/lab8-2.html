@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    
+    <style>
+    
+    div{
+        background : pink;
+        border : solid red;
+        border-radius : 5px;
+        padding : 10px;
+        
+    }
+    
+    h1{
+        text-align : center;
+        color : green;
+    }
+    </style>
+</head>
+<body>
+<div>
+<h1>Дайте відповідь на запитання</h1>
+<form>
+    <label for="name"> Ім'я </label> <input type="text" id="name"> <br>
+    <label> Стать : </label>
+    <input type="radio" name="n" value="Шановний" checked> <label for="m"> Чол. </label>
+    <input type="radio" name="n" value="Шановна" > <label for="w"> Жін. </label> <br>
+    
+    <label for="s"> Місто : </label> 
+    <select id="s"><br>
+        <option value="Луцьк" selected>Луцьк</option>
+        <option value="Рівне">Рівне</option>
+        <option value="Львів">Львів</option>
+        <option value="Житомир">Житомир</option>
+    </select>
+    <br>
+    <label> Мови програмування : </label> <br>
+    <input name="l" type="checkbox" value="Java">    <label>Java</label><br>
+    <input name="l" type="checkbox" value="C++">     <label>C++</label><br>
+    <input name="l" type="checkbox" value="Python">  <label>Python</label><br>
+    <input name="l" type="checkbox" value="C#">  <label>C#</label><br>
+    <input name="l" type="checkbox" value="JS">  <label>JavaScript</label><br>
+    
+    <br><input type="button" value="OK" onClick="fun()">
+</form>
+
+</div>
+<script>
+function fun(){
+    let text = "";
+    let a = document.getElementsByName("n");
+    let n = document.getElementById("name");
+    for(let q = 0;q < a.length;q++){
+        if(a[q].checked)
+            text += a[q].value + " " + n.value + ", ";
+    }
+    a = document.getElementById("s");
+    text += "Ви проживаєте в м." + a.options[a.selectedIndex].text + ". ";
+    text += "Мови програмування, які Ви знаєте : ";
+    a = document.getElementsByName("l");
+    let c = [];
+    for(let q = 0;q < a.length;q++){
+        if(a[q].checked)
+            c.push(a[q].value);
+    }
+    
+    for(let q = 0;q < c.length;q++){
+        if(q == c.length -1)
+            text += c[q];
+        else
+            text += c[q] + ", ";
+    }
+    alert(text);
+}
+</script>
+
+</body>
+</html>

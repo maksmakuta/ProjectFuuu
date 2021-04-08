@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Block</title>
+    <style>
+    div{
+        background : green;
+        border : 1px green solid;
+        width : 100px;
+        height : 100px;
+    }
+    </style>
+</head>
+<body>
+
+Верхній лівий : <input type="range" id="ru" min="0" max="100" value="0" oninput="fun()"><input type="text" id="rut"><br>
+Верхній правий : <input type="range" id="rd" min="0" max="100" value="0" oninput="fun()"><input type="text" id="rdt"><br>
+Нижній правий : <input type="range" id="lu" min="0" max="100" value="0" oninput="fun()"><input type="text" id="lut"><br>
+Нижній лівий : <input type="range" id="ld" min="0" max="100" value="0" oninput="fun()"><input type="text" id="ldt"><br>
+
+<div id="block"> </div>
+<script>
+    function fun(){
+        let block = document.getElementById("block");
+        let ru = document.getElementById("ru").value;
+        let rd = document.getElementById("rd").value;
+        let lu = document.getElementById("lu").value;
+        let ld = document.getElementById("ld").value;
+        block.style.borderRadius=ru+'px '+rd+'px '+lu+'px '+ld+'px ';
+        document.getElementById("rut").value = ru;
+        document.getElementById("rdt").value = rd;
+        document.getElementById("lut").value = lu;
+        document.getElementById("ldt").value = ld;
+    }
+</script>
+</body>
+</html>
