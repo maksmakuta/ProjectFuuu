@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+
+<ul id="list">
+</ul>
+
+
+<script>
+
+    function getElement(id){
+        return document.getElementById(id);
+    }
+
+    function newElement(tag,text){
+        let mElement = document.createElement(tag);
+        mElement.innerHTML = text;
+        return mElement;
+    }
+    
+    function app(){
+        while(true){
+            let text = prompt("Enter new element for list");
+            if(typeof text === 'string' && text.length < 1 ) break;
+            let e = getElement('list');
+            e.appendChild(newElement('li',text));
+        }
+    }
+    
+    app();
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Html from JS</title>
+    
+    <style>
+        .header{
+            color : white;
+            background : black;
+            border : 2px solid yellow;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="head1"> Lorem ipsum Header</h1>
+
+<p id="fp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lobortis elementum nibh tellus molestie nunc non blandit. Dolor sed viverra ipsum nunc aliquet bibendum. Sit amet est placerat in egestas. Natoque penatibus et magnis dis parturient. Scelerisque in dictum non consectetur a erat nam at. Aliquam ultrices sagittis orci a scelerisque purus semper eget duis. Lorem ipsum dolor sit amet consectetur. Suspendisse potenti nullam ac tortor vitae purus faucibus. Fermentum posuere urna nec tincidunt praesent semper feugiat nibh sed. Sit amet consectetur adipiscing elit pellentesque habitant morbi. Id diam maecenas ultricies mi eget mauris pharetra et ultrices. Orci nulla pellentesque dignissim enim. Tellus pellentesque eu tincidunt tortor aliquam nulla. A pellentesque sit amet porttitor eget dolor morbi non arcu. Maecenas accumsan lacus vel facilisis volutpat est.</p>
+
+<p>Imperdiet massa tincidunt nunc pulvinar sapien et ligula. Et netus et malesuada fames ac turpis. Ac orci phasellus egestas tellus. Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat. Porttitor massa id neque aliquam vestibulum morbi blandit. Ut faucibus pulvinar elementum integer. Nunc lobortis mattis aliquam faucibus purus. Sem nulla pharetra diam sit amet nisl. Pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Quam adipiscing vitae proin sagittis nisl rhoncus. Neque egestas congue quisque egestas. Volutpat consequat mauris nunc congue nisi vitae suscipit. Pharetra et ultrices neque ornare aenean euismod.</p>
+
+<p>Et netus et malesuada fames ac turpis. Eleifend donec pretium vulputate sapien nec. Ultrices dui sapien eget mi proin sed libero. Augue mauris augue neque gravida in fermentum et sollicitudin. In arcu cursus euismod quis viverra nibh cras pulvinar mattis. Nam aliquam sem et tortor consequat id porta. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Turpis nunc eget lorem dolor sed viverra ipsum nunc. Commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Rutrum tellus pellentesque eu tincidunt tortor. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc. In tellus integer feugiat scelerisque varius morbi enim nunc.</p>
+
+<ul>
+<li>One</li>
+<li>Two</li>
+<li>Three</li>
+</ul>
+
+<input type='button' value='Click Me!!' onClick="updateHtml()">
+
+<script>
+    let changed = false;
+    function append(elem,e){
+        elem.after(e);
+    }
+    
+    function prepend(elem,e){
+        elem.before(e);
+    }
+    
+    function getElement(id){
+        return document.getElementById(id);
+    }
+
+    function newElement(tag,text,styleText){
+        let mElement = document.createElement(tag);
+        mElement.innerHTML = text;
+        if(typeof styleText === 'string' && styleText.length != 0)
+            mElement.style.cssText = styleText;
+        return mElement;
+    }
+    
+    function updateHtml(){
+    if(changed === false){
+        let h = newElement('h2','Custom Text','');
+        let h1 = getElement('head1');
+        h1.classList.add("header");
+        append(h1,h);
+        let p = getElement('fp');
+        p.classList.add("header");
+        append(p,newElement('p','Custom paragraph',''));
+        prepend(document.getElementsByTagName('li')[0],newElement('li','New first',''));
+        append(document.getElementsByTagName('li')[3],newElement('li','New second',''));
+            changed = true;
+        }
+    }
+</script>
+</body>
+</html>

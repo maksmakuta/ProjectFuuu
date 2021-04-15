@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Html from JS</title>
+</head>
+<body>
+<script>
+    function newElement(tag,text,styleText){
+        let mElement = document.createElement(tag);
+        mElement.innerHTML = text;
+        mElement.style.cssText = styleText;
+        document.body.prepend(mElement); // C1
+    }
+    function genHtml(){
+        let text = 'Some beautiful text for creating from JS and work in any modern browser...';
+        newElement('p',text,'background : black; color : white');
+        newElement('h2','H2 from JavaScript','color : green; border : 1px solid #9fa;');
+        newElement('h1','Header','color : red;');
+        
+        //all elements reversed by position  [C1]
+    }
+    
+    genHtml();
+</script>
+</body>
+</html>
