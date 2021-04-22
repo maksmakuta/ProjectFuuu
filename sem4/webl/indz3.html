@@ -1,0 +1,48 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Anim | INDZ3</title>
+  
+  <style>
+    
+    body{
+        margin : 0;
+    }
+    
+    .sky{
+    }
+    .sun{
+    
+    }
+    .moon{
+        width : 100px;
+        height : 100px;
+        top : 22%;
+        left : 75%;
+        background : #888;
+        border-radius : 50%;
+        position: absolute;
+       // animation: sun-anim 10s linear infinite;
+    }
+    .land{
+    
+    }
+    
+    @keyframes sun-anim {
+        0%   { left: 0%;   top: 90%; }
+        25%   { left: 25%;   top: 60%; }
+        50%   { left: 50%;   top: 30%; }
+        75%   { left: 75%;   top: 60%; }
+        100% { left: 90%;   top: 88 %; }
+       }
+  </style>
+  
+</head>
+<body>
+    <main>
+    <div class="moon"></div>
+    </main>
+</body>
+</html>
