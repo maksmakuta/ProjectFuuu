@@ -1,0 +1,51 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>Chess</title>
+</head>
+<body>
+
+<p> Pos 1 x <input type="text" id="p1x"> </p>
+<p> Pos 1 y <input type="text" id="p1y"> </p>
+<p> Pos 2 x <input type="text" id="p2x"> </p>
+<p> Pos 2 y <input type="text" id="p2y"> </p>
+<p> <input type="button" value="Check" onClick="fun()"> </p>
+<p> Result <input type="text" id="res"> </p>
+<script>
+
+function fun(){
+    let ax = getValue("p1x");
+    let ay = getValue("p1y");
+    let bx = getValue("p2x");
+    let by = getValue("p2y");
+    
+    if(ax <= 0 || ax > 8){
+        setValue("res","Data is incorrect");
+    }else if(ay <= 0 || ay > 8){
+        setValue("res","Data is incorrect");
+    }else if(bx <= 0 || bx > 8){
+        setValue("res","Data is incorrect");
+    }else if(by <= 0 || by > 8){
+        setValue("res","Data is incorrect");
+    }else {
+        let a = ax % 2 + ay % 2;
+        let b = bx % 2 + by % 2;
+        if(a == b){
+         setValue("res","Same color");
+        }else{
+         setValue("res","Another color");
+        }
+    }
+}
+
+function getValue(id){
+    return document.getElementById(id).value;
+}
+
+function setValue(id,value){
+    document.getElementById(id).value = value;
+}
+
+</script>
+</body>
+</html>

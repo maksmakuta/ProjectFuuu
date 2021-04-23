@@ -2,47 +2,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>CSS Anim | INDZ3</title>
-  
+  <title>CSS3 Anim | INDZ3</title>
   <style>
-    
-    body{
-        margin : 0;
-    }
-    
-    .sky{
-    }
-    .sun{
-    
-    }
-    .moon{
-        width : 100px;
-        height : 100px;
-        top : 22%;
-        left : 75%;
-        background : #888;
-        border-radius : 50%;
-        position: absolute;
-       // animation: sun-anim 10s linear infinite;
-    }
-    .land{
-    
-    }
-    
-    @keyframes sun-anim {
-        0%   { left: 0%;   top: 90%; }
-        25%   { left: 25%;   top: 60%; }
-        50%   { left: 50%;   top: 30%; }
-        75%   { left: 75%;   top: 60%; }
-        100% { left: 90%;   top: 88 %; }
-       }
+  body{
+  margin:0;
+}
+.win, .sun, .moon, .land, .stars span{
+  animation-duration:20s;
+  animation-iteration-count: infinite;
+  animation-timing-function:linear;
+}
+.win{
+  height:100vh;
+  background-color: #72627C;
+  animation-name:mainAnim;
+}
+.sun{
+  width:100px;
+  height:100px;
+  background-color:radial-gradient(#f39f18, #f49f55);
+  border-radius:50%;
+  position:absolute;
+  top:70%;
+  left:10%;
+  box-shadow: 0px 0px 52px 2px rgba(255,170,0,1);
+  animation-name:sun_anim;
+  z-index:2;
+}
+
+.moon{
+  width:100px;
+  height:100px;
+  background-color:#F4FEFE;
+  border-radius:50%;
+  position:absolute;
+  top:15%;
+  left:80%;
+  box-shadow: 0px 0px 30px 0px #FFFF;
+  animation-name:moon_anim;
+  z-index:2;
+}
+
+@keyframes mainAnim{
+  0%{  background-color: #72627C;} //linear-gradient(to top, #fefcea, #f1da36);
+  10%{ background-color: #E9AD88;}
+  20%{ background-color: #7a9eb6;}
+  30%{ background-color: #77B5FE;}
+  40%{ background-color: #CC763F;}
+  50%{ background-color: #E06632;}
+  60%{ background-color: #75423C;}
+  70%{ background-color: #331C1A;}
+  80%{ background-color: #000000;}
+  90%{ background-color: #000000;}
+  100%{background-color: #463D4C;}
+}
+@keyframes sun_anim{
+  0%{   top:70%;left:10%; background-color:#f39f18; box-shadow: 0px 0px 52px 2px rgba(255,170,0,1);}
+  10%{  top:40%;left:35%; background-color:#F3F990; box-shadow: 0px 0px 40px 18px rgba(245,233,95,1);}
+  20%{  top:20%;left:45%; background-color:#F3F9D2; box-shadow: 0px 0px 35px 8px rgba(250,241,147,1);}
+  30%{  top:30%;left:50%; background-color:#F3F9D2; box-shadow: 0px 0px 100px 20px rgba(250,241,147,1);}
+  40%{  top:50%;left:60%; background-color:#F3F990; box-shadow: 0px 0px 52px 14px rgba(245,233,95,1);}
+  80%{  top:70%;left:70%; background-color:#000000; box-shadow: 0px 0px 70px 2px rgba(250,115,42,0);}
+  90%{  top:70%;left:40%; background-color:#000000; box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);}
+  100%{ top:70%;left:10%; background-color:#463D4C; box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);}
+}
+
+
+@keyframes moon_anim{
+  0%{   background-color:#72627C; box-shadow: 0px 0px 0px 0px #72627C;} 
+  10%{  background-color:#E9AD88; }
+  20%{  background-color:#7a9eb6; }
+  30%{  background-color:#77B5FE; }
+  40%{  background-color:#CC763F; }
+  50%{  background-color:#E06632; box-shadow: 0px 0px 0px 0px #E06632;}
+  60%{  background-color:#F4FEFE; box-shadow: 0px 0px 50px 5px #FFFF;}
+  70%{  background-color:#F4FEFE; box-shadow: 0px 0px 30px 12px #FFFF;}
+  80%{  background-color:#F4FEFE; box-shadow: 0px 0px 100px 18px #FFFF;}
+  90%{  background-color:#F4FEFE; box-shadow: 0px 0px 75px 12px #FFFF;}
+  100%{ background-color:#463D4C; box-shadow: 0px 0px 20px 0px #FFFF;}
+}
   </style>
-  
 </head>
 <body>
-    <main>
+  <main class="win">
+    <div class="sun"></div>  
     <div class="moon"></div>
-    </main>
+  </main>
+  
 </body>
 </html>
