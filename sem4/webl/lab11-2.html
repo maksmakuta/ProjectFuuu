@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+<canvas id='draw' width='900' height='600'></canvas>
+
+    <script type='text/javascript'>
+    let cnv = document.getElementById("draw").getContext("2d"); 
+    let c = [
+        "#922B21","#CB4335","#76448A",
+        "#7D3C98","#2E86C1","#148F77",
+        "#F1C40F","#D68910","#BA4A00",
+        "#000","#f00","#0f0",
+        "#00f","#ff0","#f0f"
+    ];
+    
+    function circle(x,y,r,s,f){
+        cnv.beginPath();
+            for(let a = 0.0;a < 2*Math.PI;a+=0.1){
+                var X = x + Math.sin(a) * r;
+                var Y = y + Math.cos(a) * r;
+                if(a == 0.0) cnv.moveTo(X,Y);
+                else cnv.lineTo(X,Y);
+            }
+        cnv.closePath();
+        if(s != null) cnv.strokeStyle = s; cnv.stroke();
+        if(f != null) cnv.fillStyle = f; cnv.fill();
+    }
+    
+    
+    function draw(){
+       for(let a = 0;a < 10;a++){
+        circle(50+(30*a),100,10,"#000",c[a]);
+       }
+       
+       for(let a = 0;a < 16;a++){
+        circle(200,300,150-(10*a),"#000",c[a]);
+       }
+    }
+    
+    draw();
+    </script> 
+</body>
+</html>
