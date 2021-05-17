@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Task</title>
+        <style>
+            #container{
+                width : 500px;
+                height : 50px;
+                margin : 0;
+                background : lightgray;
+                color : white;
+                display : flex;
+                justify-content : center;
+            }
+            p{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 20%;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="container"></div>
+    <script>
+
+    function divElem(text,color,s){
+        let e = document.createElement("div");
+        e.style.cssText = 'background : ' + color + '; flex-grow : ' + s + '; margin : 5px;';
+        let t = document.createElement("p");
+        t.innerHTML = text;
+        e.appendChild(t);
+        return e;
+    }
+
+    function main(){
+        let colors = ['red','blue','orange','green'];
+        let ss = [1,3,1,1];
+
+        for(let a = 0;a < 8;a++){
+            let c = document.getElementById('container');
+            c.appendChild(divElem((a+1).toString(),colors[a%4],ss[a%4]));
+        }
+    }
+
+    main();
+    </script>
+    </body>
+
+</html>
