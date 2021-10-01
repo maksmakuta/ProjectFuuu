@@ -5,12 +5,14 @@ Every can CHANGE code for self;
 
 For C/C++ :
     C11 or C++11 standart used;
-For Web :
+For Web   :
     HTML5, CSS3, JS
-For DB  :
+For DB    :
     PL/SQL 1.0+
+For Java  :
+    OpenJDK 1.8.0-xx
     
 P.S. : Code is not best optimized. 
        Tasks not show...
        
-Last edited: 25 Feb 2021 [20:13] lakeFm
+Last edited: 01 Oct 2021 [22:04] lakeFm
