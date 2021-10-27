@@ -142,7 +142,7 @@ class Circle{
         if(d < this.getR())
             return d == Math.sqrt(c.getR()) - Math.sqrt(this.getR());
         else
-            return d == Math.sqrt(c.getR()) + Math.sqrt(this.getR()) ;
+            return d == Math.sqrt(c.getR()) + Math.sqrt(this.getR());
     }
 
     /**
