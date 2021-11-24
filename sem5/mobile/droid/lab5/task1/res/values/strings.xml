@@ -1,0 +1,13 @@
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <string name="app_name">TabWidgetSample</string>
+    <string name="tab1_indicator" >Students</string>
+    <string name="tab2_indicator">Teachers</string>
+    <string name="tab3_indicator">Classes</string>
+    <string name="tab1_content">This is Students tab</string>
+    <string name="tab2_content">This is Teachers tab</string>
+    <string name="tab3_content">This is Classes tab</string>
+
+</resources>
