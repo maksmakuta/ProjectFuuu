@@ -4,4 +4,4 @@ This repository only for homework and other projects for Lesya Ukrainka Volyn Na
 
 # About
 
-(C) 2022 Maks Makuta (maksmakuta).
+(C) 2022 Maks Makuta (```maksmakuta```).
