@@ -1,0 +1,41 @@
+<html>
+<head>
+<title> Task 1.2 | Makuta </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta dui vitae velit accumsan, eu rutrum odio bibendum. Praesent eget bibendum purus. Proin metus libero, posuere et feugiat et, commodo ac nibh. Aenean bibendum, turpis sit amet gravida consectetur, mi nunc ultricies est, vitae gravida nulla orci vehicula sapien. Nam fermentum erat scelerisque purus commodo aliquam. Vivamus sed feugiat risus. Sed a lacus orci. Ut nibh eros, euismod ac neque placerat, lacinia convallis mi.
+</p>
+<p id='par2'>
+Nam pretium sapien eget elementum scelerisque. Mauris sagittis neque consectetur, porta est sit amet, porta augue. Nullam egestas interdum condimentum. Quisque congue augue at leo tincidunt dictum. Ut eros lorem, pretium nec lorem at, aliquam faucibus sem. Phasellus ut diam sit amet ipsum maximus fringilla at ut magna. Cras pulvinar tellus sit amet risus iaculis, ac hendrerit tortor aliquam. Vivamus imperdiet erat id nunc malesuada, aliquet posuere metus pulvinar. Morbi aliquet mauris eu mollis mollis. Pellentesque non urna nec ante semper commodo. Aenean quis bibendum libero, sed commodo nisi.
+</p>
+<form>
+  <input id="but2" type="button" value='Button 2'/>
+</form>
+
+<script type='text/javascript'>
+let i = -1;
+
+$(document).ready(function() {
+  $("#but2").click(function(){
+        i++;
+        if(i > 2) i = 0;
+        appendStyle(i);
+  });
+});
+
+function appendStyle(i){
+    $("#par2").removeAttr("style");
+    if(i == 0){
+        $("#par2").css({'font-family': 'Times New Roman, Times, serif;','color': '#F00'});
+    }else if(i == 1){
+        $("#par2").css({'font-family': 'Arial, Helvetica, sans-serif;','color': '#00F'});
+    }else if(i == 2){
+        $("#par2").css({'font-family': 'Verdana, sans-serif;','font-weight': 'bold','border-style': 'solid','border-width': '1px'});
+    }
+}
+
+</script>
+</body>
+</html>
