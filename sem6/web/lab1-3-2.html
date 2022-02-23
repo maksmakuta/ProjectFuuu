@@ -1,0 +1,42 @@
+<html>
+<head>
+<title> Task 1.3.2 | Makuta </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+  .j{
+    background-color : green;
+    color : white;
+    border : 2px solid grey;
+  }
+</style>
+</head>
+<body>
+
+<h1> Header1 </h1>
+
+<p> Some text here (1)</p>
+<p> Some text here (2)</p>
+<p> Some text here (3)</p>
+
+<ul>
+<li>One</li>
+<li>Two</li>
+<li>Three</li>
+</ul>
+
+<input id="btn" type=button value="Click Me!"/>
+
+<script type='text/javascript'>
+$("#btn").click(function(){
+  $("h1").after("<h2> Header 2 </h2>");
+  $("p").first().after("<p> Some text in paragraph </p>");
+  $("li").first().before("<li> First </li>");
+  $("li").last().after("<li> Last </li>");
+
+  $("h1").addClass("j");
+  $("p").first().addClass("j");
+
+});
+</script>
+</body>
+</html>
