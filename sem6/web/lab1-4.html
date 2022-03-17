@@ -1,0 +1,16 @@
+<html>
+<head>
+<title> Task 1.4 | Makuta </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<script type='text/javascript'>
+function createSlider(min,max,def){
+  return "<input type=\"range\" value=\'"+ def +"\' min=\'" + min + "\' max=\'" + max + "\'>"
+}
+$().ready(function(){
+  $("body").append(createSlider(0,20,5));
+});
+</script>
+</body>
+</html>
