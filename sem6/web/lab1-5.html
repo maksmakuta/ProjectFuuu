@@ -1,0 +1,59 @@
+<html>
+<head>
+<title> Task 1.5 | Makuta </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+#accordeon {
+	width: 300px;
+	border: 10px solid #fff;
+	margin: 10px;
+}
+
+.acc-head {
+	padding: 5px 10px;
+	background: #c0c0c0;
+	cursor: pointer;
+}
+
+.acc-body {
+	padding: 10px;
+	border-bottom: 1px solid #c0c0c0;
+	margin-bottom: 5px;
+	display: none;
+}
+</style>
+</head>
+<body>
+
+<div id="accordeon"> <!-- empty --> </div>
+
+<script type='text/javascript'>
+
+const text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
+             "Ipsum saepe ex nesciunt, quidem quis illo cupiditate, quod maxime.\n" +
+             "Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!\n";
+
+function genElem(pos){
+  return "<div class=\"acc-head\">" + "Header " + pos + "</div>" +
+		 "<div class=\"acc-body\">" +  text + "</div>";
+}
+
+ $().ready(function(){
+
+ for(let i = 0;i < 7;i++){
+  $('#accordeon').append(genElem(i+1)); // generate element and put in div with id = accordeon
+ }
+
+  $(document).ready(function() {
+    $('#accordeon .acc-head').on('click', f_acc); // add callback on mouse click
+  });
+
+  function f_acc(){
+    $('#accordeon .acc-body').not($(this).next()).slideUp(1000); //hide all body
+    $(this).next().slideToggle(1500); // open clicked body
+  }
+});
+
+ </script>
+</body>
+</html>

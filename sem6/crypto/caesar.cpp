@@ -29,4 +29,4 @@ int main(int argc, char** argv){
     std::cout << "Usage : " << argv[0] << " step text " << std::endl;
   }
 	return 0;
-}
+} 
