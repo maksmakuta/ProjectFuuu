@@ -1,0 +1,43 @@
+<html>
+<head>
+<title> Task 2.1 | Makuta </title>
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+<style>
+
+  div{
+    text-align: center
+  }
+
+</style>
+<body>
+
+<div id="root" style="text-align:center"> </div>
+
+<script type='text/babel'>
+
+class Item extends React.Component {
+  render() {
+    return <div>
+            <h1>Подія: подія {this.props.id}</h1>
+            <h3>Дата: дата {this.props.id}</h3>
+            <p>якийсь коментар до події {this.props.id}</p>
+    </div>;
+  }
+}
+
+ReactDOM.render(
+                <div>
+                <Item id="1" />
+                <Item id="2" />
+                <Item id="3" />
+                <Item id="4" />
+                <Item id="5" />
+                </div>,
+                document.getElementById('root')
+                );
+
+</script>
+</body>
+</html>

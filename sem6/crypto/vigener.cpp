@@ -10,8 +10,7 @@ str vigener(const str& text, const str& key,bool op){
   FOR(i,0,text.size()){
     int k = key[i % key.size()] - 'A';
     int t = text[i];
-    if(t != ' ') data += (char)(((op ? (t + k) : (t - k)) % 26) + 'A');
-    else data += ' ';
+    t != ' ' ? data += (char)(((op ? (t + k) : (t - k)) % 26) + 'A') : data += ' ';
   }
   return data;
 }
@@ -22,7 +21,7 @@ str toUpper(const str& s){
   return data;
 }
 
-int main(int argc, char** argv){
+int main(int argc, char** argv){https://meet.google.com/thr-gecj-oqy
   if(argc >= 3){
     bool op = argv[1][1] == 'e';
     str key = toUpper(argv[2]),text;
@@ -32,7 +31,7 @@ int main(int argc, char** argv){
     std::cout << "Usage: " << argv[0] << " op key text... " << std::endl <<
                  "\t  op    -> -e for encoding OR -d for decoding " << std::endl <<
                  "\t key    -> text used as key (any length)" << std::endl <<
-                 "\ttext... -> text that encoded/decoded " << std::endl; 
+                 "\ttext... -> text that encoded/decoded " << std::endl;
   }
   return 0;
 }
