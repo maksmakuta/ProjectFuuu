@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Check</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+</head>
+<body>
+
+<div id="wrapper"></div>
+
+<script type="text/babel">
+
+class TodoApp extends React.Component {
+  constructor(props) { // конструктор
+    super(props);
+    this.state = { items: [], text: '' };
+    this.handleChange = this.handleChange.bind(this); // звязує обробники на події з методами класу
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  render() { // малює весь інтерфейс
+    return (
+      <div>
+        <h3>Список справ</h3>
+        <TodoList items={this.state.items} />
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="new-todo"> Що потрібно зробити? </label>
+          <input id="new-todo" onChange={this.handleChange} value={this.state.text} />
+          <button> Додати № {this.state.items.length + 1} </button>
+        </form>
+      </div>
+    );
+  }
+
+ handleChange(e) {// змінює об'єкт
+    this.setState({ text: e.target.value });
+  }
+
+ handleSubmit(e) { // додає новий об'єкт
+    e.preventDefault();
+    if (!this.state.text.length) {
+      return;
+    }
+    const newItem = { text: this.state.text, id: Date.now() };
+    this.setState(state => ({
+      items: state.items.concat(newItem),
+      text: ''
+    }));
+  }
+}
+
+class TodoList extends React.Component {
+  render() { // виводить сам список справ
+    return (
+      <ul>
+        {this.props.items.map(item => (
+          <li key={item.id}>{item.text}</li>
+        ))}
+      </ul>
+    );
+  }
+}
+
+ReactDOM.render( // виводить всю програму і працює з нею
+  <TodoApp />,
+  document.getElementById('wrapper')
+);
+
+</script>
+</body>
+</html>
