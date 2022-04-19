@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>e-shop in Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            Vue.component('e-card', {
+                props: ['item'],
+                template: ' <div class="card"><img v-bind:src="item.image" alt="Image"><div class="container"><h3><b>{{ item.name }}</b></h3><h4>{{ item.price }} $</h4><p>{{ item.info }}</p></div></div>'
+            })
+            var sample = new Vue({
+                el: '#app',
+                data: {
+                    products : {
+                        card1 : {
+                            name: 'SmartWatch 1',
+                            image: 'https://content2.rozetka.com.ua/goods/images/big/241714693.jpg',
+                            info: 'Low Price',
+                            price: 1700
+                        },card2 : {
+                            name  : 'SmartWatch 2',
+                            image   : 'https://content.rozetka.com.ua/goods/images/big/253869893.jpg',
+                            info  : 'Universal',
+                            price : 2000
+                        },card3 : {
+                            name  : 'SmartWatch 3',
+                            image   : 'https://content1.rozetka.com.ua/goods/images/big/253867337.jpg',
+                            info  : 'For billionaires',
+                            price : 3600
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+    <style>
+    .card {
+        /* Add shadows to create the "card" effect */
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width : 250px;
+        height : 400px;
+        float : left;
+        margin-left : 20px;
+    }
+    img {
+        display: block;
+        margin-top : 20px;
+        margin-left: auto;
+        margin-right: auto;
+        height : 50%
+    }
+
+    /* On mouse-over, add a deeper shadow */
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+    /* Add some padding inside the card container */
+    .container {
+        padding: 2px 16px;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <e-card v-for="value in products" v-bind:item="value"></e-card>
+    </div>
+</body>
+</html>
