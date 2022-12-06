@@ -21,7 +21,7 @@ str toUpper(const str& s){
   return data;
 }
 
-int main(int argc, char** argv){https://meet.google.com/thr-gecj-oqy
+int main(int argc, char** argv){
   if(argc >= 3){
     bool op = argv[1][1] == 'e';
     str key = toUpper(argv[2]),text;
